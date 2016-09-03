@@ -1,7 +1,7 @@
 from PepipostAPIV10Lib.Controllers.Email import *
 import json
 
-controller = Email()
+Email = Email()
 
 #data = ()
 data = {
@@ -15,6 +15,6 @@ data = {
     }
 }
 
-response = controller.send(data)
+response = Email.send(data)
 
 print response
