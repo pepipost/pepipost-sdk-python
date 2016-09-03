@@ -11,8 +11,11 @@ INSTALLATION:
 The generated code uses Python libraries named Requests and Jsonpickle. 
 
 PIP is a popular tool for managing python packages[1].
+
 To resolve these packages:
+
 1) From terminal/cmd navigate to the root directory
+
 2) Invoke 'pip install -r requirements.txt'
 
 Note: You will need internet access to resolve these dependencies.
