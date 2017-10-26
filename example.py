@@ -17,4 +17,4 @@ data = {
 
 response = Email.send(data)
 
-print response
+print response # will work for only python2 for python3 change it to print(response)
