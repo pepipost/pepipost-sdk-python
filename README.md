@@ -67,7 +67,7 @@ Once Pepipost is install, use the sample example to test.
 
    1. Run the below command to download the requirements:
          
-      ```pip install -r requirement.txt```
+      ```pip install -r requirements.txt```
       
       ![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=pepipost-Python)
 
