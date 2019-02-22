@@ -1,4 +1,4 @@
-![pepipostlogo](https://pepipost.com/assets/img/pepipost-footLogo.png)
+![pepipostlogo](https://pepipost.com/wp-content/uploads/2017/07/P_LOGO.png)
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.txt)
 [![Open Source Helpers](https://www.codetriage.com/pepipost/pepipost-sdk-python/badges/users.svg)](https://www.codetriage.com/pepipost/pepipost-sdk-python)
