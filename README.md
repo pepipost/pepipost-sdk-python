@@ -168,7 +168,7 @@ body.settings.unsubscribe = 1
 
 try:
     result = email_controller.create_send_email(api_key, body)
-    if not (result.error_info.error_message is None):
+    if not (result.error_info is None):
         print("Reason :: " + str(result.error_info.error_message) + "\n" + "Message :: " + str(result.message))
     else:
         print("Message :: " + result.message)
