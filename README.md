@@ -27,7 +27,7 @@ For any update of this library check [Releases](https://github.com/pepipost/pepi
    
 There are two ways of installing this Pepipost library. You can use either of the below: 
    
-```**pip install pepipost**``` 
+**```pip install pepipost```** 
 
 Once Pepipost is install, use the sample example to test.
    
