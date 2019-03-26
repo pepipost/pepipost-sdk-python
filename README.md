@@ -46,16 +46,15 @@ Install Package
 ---------------
 There are two ways of installing this Pepipost library. You can use either of the below: 
    
-.. code:: bash
-
     pip install pepipost
 
-Once Pepipost is install, use the sample example to test.
+Once Pepipost is install, use the below sample example to test.
    
-**OR**
+Alternatively, you can install the library directly from GitHub using the below command:
    
-```git clone https://github.com/pepipost/pepipost-sdk-python.git pepipost_python``` 
+    git clone https://github.com/pepipost/pepipost-sdk-python.git pepipost_python
    
+### For IDE based installation
 Refer [this](https://github.com/pepipost/pepipost-sdk-python/blob/master/pyCharm.md) link to install and use this SDK in a IDE environment.   
 
 <a name="sample"></a>
