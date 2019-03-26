@@ -30,7 +30,6 @@ Installation
 
 Prerequisites
 -------------
-
    * Python (2 >=2.7.9 or 3 >= 3.4)
    * Python IDE (we are using [Pycharm](https://www.jetbrains.com/pycharm/download/) )
    * Python packages  
@@ -43,10 +42,13 @@ Prerequisites
    * Installation of PIP can be done from [here](https://pip.pypa.io/en/stable/installing/). 
    * We recommend using PIP Dependency manager in order to install all the dependencies which we had mentioned in ```requirements.txt``` files that comes in SDK.
 
-
+Install Package
+---------------
 There are two ways of installing this Pepipost library. You can use either of the below: 
    
-**```pip install pepipost```** 
+.. code:: bash
+
+    pip install pepipost
 
 Once Pepipost is install, use the sample example to test.
    
