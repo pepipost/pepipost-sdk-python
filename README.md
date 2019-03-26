@@ -22,21 +22,15 @@ For any update of this library check [Releases](https://github.com/pepipost/pepi
 * [License](#license)
 
 
-<a name="installation"></a>
-## Installation 
-   
-There are two ways of installing this Pepipost library. You can use either of the below: 
-   
-**```pip install pepipost```** 
 
-Once Pepipost is install, use the sample example to test.
-   
-**OR**
-   
-```git clone https://github.com/pepipost/pepipost-sdk-python.git pepipost_python``` 
-   
- 
-#### Prerequisites
+
+<a name="installation"></a>
+Installation 
+============
+
+Prerequisites
+-------------
+
    * Python (2 >=2.7.9 or 3 >= 3.4)
    * Python IDE (we are using [Pycharm](https://www.jetbrains.com/pycharm/download/) )
    * Python packages  
@@ -48,6 +42,17 @@ Once Pepipost is install, use the sample example to test.
      
    * Installation of PIP can be done from [here](https://pip.pypa.io/en/stable/installing/). 
    * We recommend using PIP Dependency manager in order to install all the dependencies which we had mentioned in ```requirements.txt``` files that comes in SDK.
+
+
+There are two ways of installing this Pepipost library. You can use either of the below: 
+   
+**```pip install pepipost```** 
+
+Once Pepipost is install, use the sample example to test.
+   
+**OR**
+   
+```git clone https://github.com/pepipost/pepipost-sdk-python.git pepipost_python``` 
    
 Refer [this](https://github.com/pepipost/pepipost-sdk-python/blob/master/pyCharm.md) link to install and use this SDK in a IDE environment.   
 
