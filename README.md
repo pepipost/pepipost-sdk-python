@@ -21,9 +21,6 @@ For any update of this library check [Releases](https://github.com/pepipost/pepi
 * [About](#about)
 * [License](#license)
 
-
-
-
 <a name="installation"></a>
 Installation 
 ============
@@ -44,17 +41,21 @@ Prerequisites
 
 Install Package
 ---------------
-There are two ways of installing this Pepipost library. You can use either of the below: 
+
+#### PIP based installation
    
     pip install pepipost
 
 Once Pepipost is install, use the below sample example to test.
    
-Alternatively, you can install the library directly from GitHub using the below command:
+#### Install directly from GitHub
+You can install the library directly from GitHub also using the below command:
    
     git clone https://github.com/pepipost/pepipost-sdk-python.git pepipost_python
-   
-### For IDE based installation
+
+Note: If you are installing directly from GitHub, then you need to install the dependecies separately which are mentioned in our requirements.txt file.
+
+**For IDE based installation**
 Refer [this](https://github.com/pepipost/pepipost-sdk-python/blob/master/pyCharm.md) link to install and use this SDK in a IDE environment.   
 
 <a name="sample"></a>
