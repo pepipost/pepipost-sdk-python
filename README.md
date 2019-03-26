@@ -46,7 +46,7 @@ Install Package
    
     pip install pepipost
 
-Once Pepipost is install, use the below sample example to test.
+Once Pepipost is installed successfully, use the below sample [example](#sample-example) to test.
    
 #### Install directly from GitHub
 You can install the library directly from GitHub also using the below command:
@@ -55,7 +55,7 @@ You can install the library directly from GitHub also using the below command:
 
 Note: If you are installing directly from GitHub, then you need to install the dependecies separately which are mentioned in our requirements.txt file.
 
-**For IDE based installation**
+#### For IDE based installation
 Refer [this](https://github.com/pepipost/pepipost-sdk-python/blob/master/pyCharm.md) link to install and use this SDK in a IDE environment.   
 
 <a name="sample"></a>
