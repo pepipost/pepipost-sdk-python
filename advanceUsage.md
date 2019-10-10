@@ -10,7 +10,8 @@ from pepipost.models.mfrom import From
 from pepipost.models.email_body_attachments import EmailBodyAttachments
 from pepipost.models.settings import Settings
 from pepipost.exceptions.api_exception import APIException
-from pepipost.api_helper import APIHelper
+from pepipost.models.attributes import Attributes
+from pepipost.models.xheaders import Xheaders
 import jsonpickle
 
 client = PepipostClient()
@@ -24,14 +25,14 @@ body.personalizations.append(Personalizations())
 body.personalizations[0].recipient = 'my-email-id@domain.com'
 body.personalizations[0].x_apiheader_cc = 'x api header cc content'
 body.personalizations[0].x_apiheader = 'xapi header for emails'
-body.personalizations[0].attributes = APIHelper.json_deserialize('{"name":"pepi","love":"Emails"}')
+body.personalizations[0].attributes = Attributes('{"name":"pepi","love":"Emails"}').get_attributes()
 body.personalizations[0].attachments = []
 body.personalizations[0].attachments.append(Attachments()) 
 body.personalizations[0].attachments[0].file_content = '"SGVsbG8sIHRoaXMgZmlsZSBpcyBhbiBpbmZvcm1hdGlvbmFsIGZpbGU6OiBTZW5kaW5nIGVtYWlscyB0byB0aGUgaW5ib3ggaXMgd2hhdCB3ZSBkbywgYnV0IHRoYXTigJlzIG5vdCB0aGUgb25seSByZWFzb24gd2h5IGRldmVsb3BlcnMgYW5kIGVudGVycHJpc2VzIGxvdmUgdXMuIFdlIGFyZSB0aGUgb25seSBFU1AgdGhhdCBkb2VzbuKAmXQgY2hhcmdlIGZvciBlbWFpbHMgb3BlbmVkLg=="'
 body.personalizations[0].attachments[0].file_name = 'pepipost.txt'
 body.personalizations[0].recipient_cc = ['my-cc-emailid@gmail.com']
 body.personalizations[0].recipient_bcc = ['my-email-bcc-id@domain.com']
-body.personalizations[0].x_headers = APIHelper.json_deserialize('{"custom_key1":"custom_value1","custom_key2":"custom_value2"}')
+body.personalizations[0].x_headers = Xheaders('{"custom_key1":"custom_value1","custom_key2":"custom_value2"}').get_xheaders()
 
 body.tags = 'tagsPython'
 body.mfrom = From()
