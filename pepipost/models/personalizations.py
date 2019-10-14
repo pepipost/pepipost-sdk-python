@@ -21,7 +21,7 @@ class Personalizations(object):
         attachments (list of Attachments): TODO: type description here.
         recipient_cc (list of string): TODO: type description here.
         recipient_bcc (list of string): TODO: type description here.
-        x_headers (list of string): TODO: type description here.
+        x_headers (object): TODO: type description here.
 
     """
 
