@@ -58,8 +58,10 @@ body.settings.bcc = 'my-email-bcc-id@domain.com'
 body.reply_to_id = 'replyto@gmail.com'
 body.template_id = 11344
 
+URL = "https://<api-endpoint>";
+
 try:
-    result = email_controller.create_send_email(api_key, body)
+    result = email_controller.create_send_email(api_key, body, URL)
     if not (result.error_info is None):
         print("Reason :: " + str(result.error_info.error_message) + "\n" + "Message :: " + str(result.message))
     else:
