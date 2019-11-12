@@ -46,7 +46,7 @@ class EmailController(BaseController):
         _query_builder += '/v2/sendEmail'
 
         # check if url is passed
-        if url!=None:
+        if url!=None and url.strip() != '':
            _query_builder = url 
            
         _query_url = APIHelper.clean_url(_query_builder)
