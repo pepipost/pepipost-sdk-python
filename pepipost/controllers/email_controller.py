@@ -19,7 +19,8 @@ class EmailController(BaseController):
 
     def create_send_email(self,
                           api_key=None,
-                          body=None):
+                          body=None,
+                          url=None):
         """Does a POST request to /v2/sendEmail.
 
         This Endpoint sends emails with the credentials passed.
@@ -43,6 +44,11 @@ class EmailController(BaseController):
         # Prepare query URL
         _query_builder = Configuration.base_uri
         _query_builder += '/v2/sendEmail'
+
+        # check if url is passed
+        if url!=None and url.strip() != '':
+           _query_builder = url 
+           
         _query_url = APIHelper.clean_url(_query_builder)
 
         # Prepare headers

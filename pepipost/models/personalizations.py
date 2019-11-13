@@ -20,6 +20,8 @@ class Personalizations(object):
         attributes (object): TODO: type description here.
         attachments (list of Attachments): TODO: type description here.
         recipient_cc (list of string): TODO: type description here.
+        recipient_bcc (list of string): TODO: type description here.
+        x_headers (object): TODO: type description here.
 
     """
 
@@ -30,7 +32,9 @@ class Personalizations(object):
         "x_apiheader":'x-apiheader',
         "attributes":'attributes',
         "attachments":'attachments',
-        "recipient_cc":'recipient_cc'
+        "recipient_cc":'recipient_cc',
+        "recipient_bcc":'recipient_bcc',
+        "x_headers":'x-headers'
     }
 
     def __init__(self,
@@ -39,7 +43,9 @@ class Personalizations(object):
                  x_apiheader=None,
                  attributes=None,
                  attachments=None,
-                 recipient_cc=None):
+                 recipient_cc=None,
+                 recipient_bcc=None,
+                 x_headers=None):
         """Constructor for the Personalizations class"""
 
         # Initialize members of the class
@@ -49,6 +55,8 @@ class Personalizations(object):
         self.attributes = attributes
         self.attachments = attachments
         self.recipient_cc = recipient_cc
+        self.recipient_bcc = recipient_bcc
+        self.x_headers = x_headers
 
 
     @classmethod
@@ -79,6 +87,8 @@ class Personalizations(object):
             for structure in dictionary.get('attachments'):
                 attachments.append(pepipost.models.attachments.Attachments.from_dictionary(structure))
         recipient_cc = dictionary.get('recipient_cc')
+        recipient_bcc = dictionary.get('recipient_bcc')
+        x_headers = dictionary.get('x-headers')
 
         # Return an object of this model
         return cls(recipient,
@@ -86,6 +96,8 @@ class Personalizations(object):
                    x_apiheader,
                    attributes,
                    attachments,
-                   recipient_cc)
+                   recipient_cc,
+                   recipient_bcc,
+                   x_headers)
 
 

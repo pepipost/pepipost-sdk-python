@@ -23,6 +23,7 @@ class EmailBody(object):
         mfrom (From): TODO: type description here.
         subject (string): TODO: type description here.
         content (string): TODO: type description here.
+        ampcontent (string): TODO: type description here.
         attachments (list of EmailBodyAttachments): TODO: type description
             here.
         settings (Settings): TODO: type description here.
@@ -38,6 +39,7 @@ class EmailBody(object):
         "mfrom":'from',
         "subject":'subject',
         "content":'content',
+        "ampcontent":'ampcontent',
         "attachments":'attachments',
         "settings":'settings',
         "reply_to_id":'replyToId',
@@ -50,6 +52,7 @@ class EmailBody(object):
                  mfrom=None,
                  subject=None,
                  content=None,
+                 ampcontent=None,
                  attachments=None,
                  settings=None,
                  reply_to_id=None,
@@ -62,6 +65,7 @@ class EmailBody(object):
         self.mfrom = mfrom
         self.subject = subject
         self.content = content
+        self.ampcontent = ampcontent
         self.attachments = attachments
         self.settings = settings
         self.reply_to_id = reply_to_id
@@ -95,6 +99,7 @@ class EmailBody(object):
         mfrom = pepipost.models.mfrom.From.from_dictionary(dictionary.get('from')) if dictionary.get('from') else None
         subject = dictionary.get('subject')
         content = dictionary.get('content')
+        ampcontent = dictionary.get('ampcontent')
         attachments = None
         if dictionary.get('attachments') != None:
             attachments = list()
@@ -110,6 +115,7 @@ class EmailBody(object):
                    mfrom,
                    subject,
                    content,
+                   ampcontent,
                    attachments,
                    settings,
                    reply_to_id,
