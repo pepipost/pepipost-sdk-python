@@ -1,5 +1,7 @@
 __all__ = [
     'attribute',
+    'attributes',
+    'xheaders',
     'mfrom',
     'email_body_attachments',
     'attachments',
