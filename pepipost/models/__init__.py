@@ -1,5 +1,5 @@
 __all__ = [
-    'attribute',
+    'attributes',
     'mfrom',
     'email_body_attachments',
     'attachments',
