@@ -4,13 +4,13 @@
 [![Open Source Helpers](https://www.codetriage.com/pepipost/pepipost-sdk-python/badges/users.svg)](https://www.codetriage.com/pepipost/pepipost-sdk-python)
 [![Twitter Follow](https://img.shields.io/twitter/follow/pepi_post.svg?style=social&label=Follow)](https://twitter.com/pepi_post)
 
-# Official Python library :snake: for [Pepipost](https://pepipost.com)
+# Python SDK Client library :snake: for [Pepipost](https://pepipost.com)
 
 This SDK contain methods for easily interacting with the Pepipost Email Sending API to send emails within few seconds.
 
 We are trying to make our libraries a Community Driven. To help us building right things in proper order we would request you to help us by sharing comments, creating new [issues](https://github.com/pepipost/pepipost-sdk-python/issues) or [pull requests](https://github.com/pepipost/pepipost-sdk-python/pulls). We welcome any sort of contribution to this library.
 
-The latest 2.5.0 version of this library provides is fully compatible with the latest Pepipost v2.0 API.
+The latest 5.0 version of this library provides is fully compatible with the latest Pepipost v5 API.
 For any update of this library check [Releases](https://github.com/pepipost/pepipost-sdk-python/releases)
 
 ## Table of Content
@@ -41,12 +41,6 @@ Prerequisites
 
 Install Package
 ---------------
-
-#### PIP based installation
-   
-    pip install pepipost
-
-Once Pepipost is installed successfully, use the below sample [example](#sample-example) to test.
    
 #### Install directly from GitHub
 You can install the library directly from GitHub also using the below command:
@@ -63,45 +57,50 @@ Refer [this](https://github.com/pepipost/pepipost-sdk-python/blob/master/pyCharm
 
 ```python
 from pepipost.pepipost_client import PepipostClient
-from pepipost.models.email_body import EmailBody
-from pepipost.models.personalizations import Personalizations
-from pepipost.models.attachments import Attachments
+from pepipost.configuration import Configuration
+from pepipost.models.send import Send
 from pepipost.models.mfrom import From
-from pepipost.models.email_body_attachments import EmailBodyAttachments
+from pepipost.models.content import Content
+from pepipost.models.type_enum import TypeEnum
+from pepipost.models.attachments import Attachments
+from pepipost.models.personalizations import Personalizations
+from pepipost.models.email_struct import EmailStruct
 from pepipost.models.settings import Settings
 from pepipost.exceptions.api_exception import APIException
 import jsonpickle
 
-client = PepipostClient()
-email_controller = client.email
-body = EmailBody()
+api_key = 'your api_key here'
+
+client = PepipostClient(api_key)
+
+send_controller = client.send
+body = Send()
+body.reply_to = 'you-reply-to-id-address@mydomain.name'
+body.mfrom = From()
+body.mfrom.email = 'hello@your-register-domain-with-pepipost'
+body.mfrom.name = 'Example Pepi'
+body.subject = 'Emailing with Pepipost is easy'
+body.content = []
+
+body.content.append(Content())
+body.content[0].mtype = TypeEnum.HTML
+body.content[0].value = '<html><body>Hey,<br><br>Do you know integration is even simpler in Pepipost, <br>with Python <br> Happy Mailing ! <br><br>Pepipost </body></html>'
+
 body.personalizations = []
 
-api_key = 'api_key here '
 body.personalizations.append(Personalizations())
-body.personalizations[0].recipient = 'recipient@your-mail.com'
+body.personalizations[0].to = []
 
-body.tags = 'tagsPython'
-body.mfrom = From()
+body.personalizations[0].to.append(EmailStruct())
+body.personalizations[0].to[0].name = 'random'
+body.personalizations[0].to[0].email = 'random@mydomain.name'
 
-body.mfrom.from_email = 'example@your-verified-domain'
-body.mfrom.from_name = 'Example Pepi'
-body.subject = 'Emailing with Pepipost is easy'
-body.content = '<html><body>Hey,<br><br>Do you know integration is even simpler in Pepipost, <br>with Python <br> Happy Mailing ! <br><br>Pepipost </body></html>'
-body.settings = Settings()
-
-body.settings.footer = 1
-body.settings.clicktrack = 1
-body.settings.opentrack = 1
-body.settings.unsubscribe = 1
+body.tags = ['Campaign']
 
 try:
-    result = email_controller.create_send_email(api_key, body)
-    if not (result.error_info is None):
-        print("Reason :: " + str(result.error_info.error_message) + "\n" + "Message :: " + str(result.message))
-    else:
-        print("Message :: " + result.message)
-except APIException as e:
+    result = send_controller.create_generate_the_mail_send_request(body)
+    print(result)
+except APIException as e: 
     print(e)
 
 ```
@@ -109,7 +108,7 @@ except APIException as e:
 <a name="announcements"></a>
 # Announcements
 
-v2.5.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-python/releases/) for details.
+v5.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-python/releases/) for details.
 
 All updates to this library are documented in our [releases](https://github.com/pepipost/pepipost-sdk-python/releases). For any queries, feel free to reach out us at dx@pepipost.com
 
