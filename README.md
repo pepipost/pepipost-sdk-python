@@ -73,7 +73,7 @@ api_key = 'your api_key here'
 
 client = PepipostClient(api_key)
 
-send_controller = client.send
+mail_send_controller = client.mail_send
 body = Send()
 body.reply_to = 'you-reply-to-id-address@mydomain.name'
 body.mfrom = From()
@@ -98,7 +98,7 @@ body.personalizations[0].to[0].email = 'random@mydomain.name'
 body.tags = ['Campaign']
 
 try:
-    result = send_controller.create_generate_the_mail_send_request(body)
+    result = mail_send_controller.create_generatethemailsendrequest(body)
     print(result)
 except APIException as e: 
     print(e)
