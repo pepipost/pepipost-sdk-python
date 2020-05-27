@@ -20,7 +20,7 @@ api_key = 'your api_key here'
 client = PepipostClient(api_key)
 
 
-send_controller = client.send
+mail_send_controller = client.mail_send
 body = Send()
 body.reply_to = 'you-reply-to-id-address@mydomain.name'
 body.mfrom = From()
@@ -127,7 +127,7 @@ body.bcc[0].name = 'random-bcc'
 body.bcc[0].email = 'random-bcc@mydomain.name'
 
 try:
-    result = send_controller.create_generate_the_mail_send_request(body)
+    result = mail_send_controller.create_generatethemailsendrequest(body)
     print(result)
 except APIException as e: 
     print(e)
