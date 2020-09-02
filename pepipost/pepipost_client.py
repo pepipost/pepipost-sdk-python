@@ -14,12 +14,15 @@ from pepipost.controllers.stats_controller import StatsController
 from pepipost.controllers.subaccounts_controller import SubaccountsController
 from pepipost.controllers.subaccounts_delete_controller import SubaccountsDeleteController
 from pepipost.controllers.subaccounts_get_sub_accounts_controller import SubaccountsGetSubAccountsController
+from pepipost.controllers.subaccounts_getcreditddetails_controller import SubaccountsGetcreditddetailsController
 from pepipost.controllers.setrecurringcreditddetails_controller import SetrecurringcreditddetailsController
 from pepipost.controllers.subaccounts_setsubaccountcredit_controller import SubaccountsSetsubaccountcreditController
 from pepipost.controllers.subaccounts_update_subaccount_controller import SubaccountsUpdateSubaccountController
 from pepipost.controllers.subaccounts_create_subaccount_controller import SubaccountsCreateSubaccountController
 from pepipost.controllers.suppression_controller import SuppressionController
 from pepipost.controllers.domain_delete_controller import DomainDeleteController
+from pepipost.controllers.domain_get_domains_controller import DomainGetDomainsController
+from pepipost.controllers.template_controller import TemplateController
 from pepipost.controllers.domain_controller import DomainController
 
 
@@ -52,6 +55,10 @@ class PepipostClient(object):
         return SubaccountsGetSubAccountsController()
 
     @lazy_property
+    def subaccounts_getcreditddetails(self):
+        return SubaccountsGetcreditddetailsController()
+
+    @lazy_property
     def setrecurringcreditddetails(self):
         return SetrecurringcreditddetailsController()
 
@@ -74,6 +81,14 @@ class PepipostClient(object):
     @lazy_property
     def domain_delete(self):
         return DomainDeleteController()
+
+    @lazy_property
+    def domain_get_domains(self):
+        return DomainGetDomainsController()
+
+    @lazy_property
+    def template(self):
+        return TemplateController()
 
     @lazy_property
     def domain(self):
