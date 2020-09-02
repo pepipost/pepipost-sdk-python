@@ -23,7 +23,7 @@ class Configuration(object):
     array_serialization = "indexed"
 
     # The base Uri for API calls
-    base_uri = 'https://api.pepipost.com/v5'
+    base_uri = 'https://api.pepipost.com/v5.1'
 
     # Your Pepipost API Key. You will find the api key in the Pepipost
     # application in Integrations.
