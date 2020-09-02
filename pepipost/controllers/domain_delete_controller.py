@@ -17,15 +17,15 @@ class DomainDeleteController(BaseController):
     """A Controller to access Endpoints in the pepipost API."""
 
 
-    def delete_domain(self,
-                      body):
+    def deletedomain(self,
+                     body):
         """Does a DELETE request to /domain/delete.
 
         This endpoint allows you to delete a domain from your Pepipost
         account.
 
         Args:
-            body (DeleteDomain): delete domain
+            body (Deletedomain): delete domain
 
         Returns:
             object: Response from the API. API Response

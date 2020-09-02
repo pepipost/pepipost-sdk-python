@@ -56,11 +56,11 @@ class MailSendController(BaseController):
 
         # Endpoint and global error handling using HTTP status codes.
         if _context.response.status_code == 400:
-            return _context.response.raw_body
+            raise APIException('API Response', _context)
         elif _context.response.status_code == 401:
-            return _context.response.raw_body
+            raise APIException('API Response', _context)
         elif _context.response.status_code == 403:
-            return _context.response.raw_body
+            raise APIException('API Response', _context)
         elif _context.response.status_code == 405:
             raise APIException('Invalid input', _context)
         self.validate_response(_context)

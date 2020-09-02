@@ -17,15 +17,15 @@ class SuppressionController(BaseController):
     """A Controller to access Endpoints in the pepipost API."""
 
 
-    def add_domain_or_email_to_suppression_list(self,
-                                                body):
+    def adddomainoremailtosuppressionlist(self,
+                                          body):
         """Does a POST request to /suppression.
 
         This API allows you to suppress an email address and block any future
         email delivery attempts on this email address.
 
         Args:
-            body (AddEmailOrDomainToSuppressionList): add email or domain to
+            body (AddemailordomaintoSuppressionlist): add email or domain to
                 suppression list
 
         Returns:
@@ -69,8 +69,8 @@ class SuppressionController(BaseController):
         # Return appropriate type
         return _context.response.raw_body
 
-    def remove_domain_or_email_to_suppression_list(self,
-                                                   body):
+    def removedomainoremailtosuppressionlist(self,
+                                             body):
         """Does a DELETE request to /suppression.
 
         Use this API to remove an email address or a recipient domain from the
@@ -79,7 +79,7 @@ class SuppressionController(BaseController):
         using commas as shown below.
 
         Args:
-            body (RemoveEmailOrDomainToSuppressionList): remove email or
+            body (RemoveemailordomaintoSuppressionlist): remove email or
                 domain to suppression list
 
         Returns:

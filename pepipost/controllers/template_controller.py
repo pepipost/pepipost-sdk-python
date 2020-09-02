@@ -12,19 +12,20 @@ from pepipost.controllers.base_controller import BaseController
 from pepipost.http.auth.custom_header_auth import CustomHeaderAuth
 from pepipost.exceptions.api_exception import APIException
 
-class SubaccountsDeleteController(BaseController):
+class TemplateController(BaseController):
 
     """A Controller to access Endpoints in the pepipost API."""
 
 
-    def delete_subaccounts_delete_delete(self,
-                                         body):
-        """Does a DELETE request to /subaccounts/delete.
+    def get_template_get(self,
+                         template_id):
+        """Does a GET request to /template.
 
-        Lets you delete a subaccount
+        Let's you fetch template data using template_id for your pepipost
+        account.
 
         Args:
-            body (Deletesubacoount): delete subaccount
+            template_id (int): TODO: type description here. Example: 
 
         Returns:
             object: Response from the API. API Response
@@ -38,18 +39,18 @@ class SubaccountsDeleteController(BaseController):
         """
 
         # Prepare query URL
-        _url_path = '/subaccounts/delete'
+        _url_path = '/template'
         _query_builder = Configuration.base_uri
         _query_builder += _url_path
+        _query_parameters = {
+            'template_id': template_id
+        }
+        _query_builder = APIHelper.append_url_with_query_parameters(_query_builder,
+            _query_parameters, Configuration.array_serialization)
         _query_url = APIHelper.clean_url(_query_builder)
 
-        # Prepare headers
-        _headers = {
-            'content-type': 'application/json; charset=utf-8'
-        }
-
         # Prepare and execute request
-        _request = self.http_client.delete(_query_url, headers=_headers, parameters=APIHelper.json_serialize(body))
+        _request = self.http_client.get(_query_url)
         CustomHeaderAuth.apply(_request)
         _context = self.execute_request(_request)
 

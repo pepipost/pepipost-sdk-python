@@ -25,7 +25,7 @@ class SubaccountsCreateSubaccountController(BaseController):
         credits are managed by the master account.
 
         Args:
-            body (CreateSubaccount): create sub account
+            body (Createsubaccount): create sub account
 
         Returns:
             object: Response from the API. API Response

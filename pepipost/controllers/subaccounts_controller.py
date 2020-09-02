@@ -24,7 +24,7 @@ class SubaccountsController(BaseController):
         Lets you enable or disable a subaccount
 
         Args:
-            body (EnableOrDisableSubacoount): enable or disable subaccount
+            body (Enableordisablesubacoount): enable or disable subaccount
 
         Returns:
             object: Response from the API. API Response

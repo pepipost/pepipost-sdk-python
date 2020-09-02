@@ -17,8 +17,8 @@ class DomainController(BaseController):
     """A Controller to access Endpoints in the pepipost API."""
 
 
-    def add_domain(self,
-                   body):
+    def adddomain(self,
+                  body):
         """Does a POST request to /domain.
 
         This endpoint enables you to add a sending domain which is one of the

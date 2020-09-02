@@ -24,7 +24,7 @@ class SubaccountsUpdateSubaccountController(BaseController):
         lets you update credentials and credit type of a subaccount.
 
         Args:
-            body (UpdateSubaccount): Update sub account
+            body (Updatesubaccount): Update sub account
 
         Returns:
             object: Response from the API. API Response

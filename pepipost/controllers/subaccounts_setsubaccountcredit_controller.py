@@ -24,7 +24,7 @@ class SubaccountsSetsubaccountcreditController(BaseController):
         Lets you add(or remove) credits to a subaccount
 
         Args:
-            body (UpdateCredisOfSubaccount): Update credit account
+            body (UpdateCredisofsubaccount): Update credit account
 
         Returns:
             object: Response from the API. API Response

@@ -18,15 +18,13 @@ class SubaccountsGetSubAccountsController(BaseController):
 
 
     def get_subaccounts_get_sub_accounts_get(self,
-                                             limit,
-                                             offset):
+                                             username):
         """Does a GET request to /subaccounts/getSubAccounts.
 
         Lets you fetch all the subaccounts created by you
 
         Args:
-            limit (string): TODO: type description here. Example: 
-            offset (string): TODO: type description here. Example: 
+            username (string): TODO: type description here. Example: 
 
         Returns:
             object: Response from the API. API Response
@@ -44,8 +42,7 @@ class SubaccountsGetSubAccountsController(BaseController):
         _query_builder = Configuration.base_uri
         _query_builder += _url_path
         _query_parameters = {
-            'limit': limit,
-            'offset': offset
+            'username': username
         }
         _query_builder = APIHelper.append_url_with_query_parameters(_query_builder,
             _query_parameters, Configuration.array_serialization)

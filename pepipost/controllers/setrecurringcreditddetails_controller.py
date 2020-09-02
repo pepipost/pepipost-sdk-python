@@ -24,7 +24,7 @@ class SetrecurringcreditddetailsController(BaseController):
         Lets you configure a recurring credit allocation to a subaccount
 
         Args:
-            body (UpdateRecurringCredisOfSubaccount): Update recurring credit
+            body (UpdaterecurringCredisofsubaccount): Update recurring credit
                 account
 
         Returns:
